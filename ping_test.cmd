@@ -1,11 +1,12 @@
 @echo off
+chcp 65001 >nul 2>nul
 title 网络连通测试
 @REM color 02
 
 @REM =========================================  使用说明 begin  =========================================
 REM ADDR        ---- 表示需要ping的地址,
-REM DELAY       ---- ping的间隔
 REM DO_FAIL     ---- 失败时要做的事情，比如设为一音乐文件地址，则ping失败可以打开
+REM DELAY       ---- ping的间隔
 set ADDR=www.baidu.com
 set DO_FAIL=D:\TEMP\music\bg.mp3
 set DELAY=3
