@@ -8,7 +8,7 @@
 
 
 
-**autoPub.cmd** 
+**autoPush.cmd** 
 
 利用原ping脚本框架简单修改一下，解决国内提交GitHub经常失败的问题，可循环执行git push直至成功。
 
