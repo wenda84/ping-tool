@@ -10,7 +10,7 @@ REM ADDR        ---- 表示需要ping的地址,
 REM DO_FAIL     ---- 失败时要做的事情，比如设为一音乐文件地址，则ping失败可以打开
 REM DELAY       ---- ping的间隔
 REM LOG_ENABLE  ---- 是否产生本地日志
-set DO_CMD=ipconfig
+set DO_CMD=git push
 set DO_FAIL=D:\TEMP\music\bg.mp3
 set DELAY=1
 set LOG_ENABLE=0
