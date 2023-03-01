@@ -45,7 +45,7 @@ set DELAY=3
     goto end  
 
 :loop
-    timeout /nobreak /t %DELAY% 
+    @REM timeout /nobreak /t %DELAY% 
     goto begin
     
 :end
