@@ -11,7 +11,7 @@ REM DO_FAIL     ---- สงฐÜสฑาชื๖ตฤสยว้ฃฌฑศศ็ษ่ฮชาปา๔ภึฮฤผþตุึทฃฌิ๒pingสงฐÜฟษาิด๒ฟ
 REM DELAY       ---- pingตฤผไธ๔
 set DO_CMD=git push
 set DO_FAIL=D:\TEMP\music\bg.mp3
-set DELAY=3
+set DELAY=0
 @REM =========================================  สนำรหตร๗ end =========================================
 
 @REM ีโศýะะด๚ย๋สนรüม๎ปแิฺบ๓ฬจิหะะฃฌะ่าชสฑฟษาิด๒ฟช
@@ -45,8 +45,9 @@ set DELAY=3
     goto end  
 
 :loop
-    @REM timeout /nobreak /t %DELAY% 
-    goto begin
+    if %ERRORLEVEL% not EQU 0  (
+        goto begin 
+    )^     
     
 :end
     pause
