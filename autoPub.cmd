@@ -35,13 +35,13 @@ set DELAY=3
 
 :error
     echo 唔----执行失败，%DELAY%秒后进行下一次尝试
-    echo %time%: your cmd runfailed, ERRORLEVEL=%ERRORLEVEL% >> "git_%this_day%.log"
+    echo %time%: your cmd runfailed, ERRORLEVEL=%ERRORLEVEL% >> "cmd_%this_day%.log"
     @REM %DO_FAIL%
     goto loop
 
 :good
     echo 耶! 执行成功!.
-    echo %time%: your cmd run successful. >> "git_%this_day%.log" 
+    echo %time%: your cmd run successful. >> "cmd_%this_day%.log" 
     goto end  
 
 :loop
