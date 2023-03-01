@@ -9,7 +9,7 @@ chcp 936 >nul 2>nul
 REM ADDR        ---- 表示需要ping的地址,
 REM DO_FAIL     ---- 失败时要做的事情，比如设为一音乐文件地址，则ping失败可以打开
 REM DELAY       ---- ping的间隔
-set ADDR=www.baidu.com
+set DO_CMD="git push"
 set DO_FAIL=D:\TEMP\music\bg.mp3
 set DELAY=3
 @REM =========================================  使用说明 end =========================================
@@ -23,8 +23,8 @@ set DELAY=3
     @REM 取日期放在begin后面，虽然效率低了点，但在脚本连续运行时，可支持跨天日志分包
     set this_day=%date:~0,4%_%date:~5,2%_%date:~8,2%
 
-    echo ===================== 开始提交...... =====================
-    git push >nul 2>nul
+    echo ===================== 开始执行...... =====================
+    %DO_CMD% >nul 2>nul
     if %ERRORLEVEL% EQU 0  (
         goto good 
     )^
