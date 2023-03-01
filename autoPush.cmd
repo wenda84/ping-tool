@@ -45,9 +45,10 @@ set DELAY=0
     goto end  
 
 :loop
-    if %ERRORLEVEL% not EQU 0  (
-        goto begin 
-    )^     
+    if %DELAY% NEQ 0  (
+        timeout /nobreak /t %DELAY% 
+    )
+    goto begin
     
 :end
     pause
