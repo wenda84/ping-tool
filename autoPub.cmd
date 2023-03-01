@@ -39,7 +39,7 @@ set DELAY=3
     goto loop
 
 :good
-    echo 耶! 提交成功!.
+    echo 耶! 执行成功!.
     echo %time%: your cmd run successful. >> "git_%this_day%.log" 
     goto end  
 
@@ -48,4 +48,4 @@ set DELAY=3
     goto begin
     
 :end
-   
+    pause
