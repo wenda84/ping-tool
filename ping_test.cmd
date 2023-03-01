@@ -44,6 +44,8 @@ set DELAY=3
     goto finish  
 
 :finish
-    timeout /nobreak /t %DELAY% 
+    if %DELAY% NEQ 0  (
+        timeout /nobreak /t %DELAY% 
+    )    
     goto begin
     
