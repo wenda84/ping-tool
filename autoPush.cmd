@@ -9,9 +9,10 @@ chcp 936 >nul 2>nul
 REM ADDR        ---- 表示需要ping的地址,
 REM DO_FAIL     ---- 失败时要做的事情，比如设为一音乐文件地址，则ping失败可以打开
 REM DELAY       ---- ping的间隔
-set DO_CMD=git push
+REM LOG_ENABLE  ---- 是否产生本地日志
+set DO_CMD=ipconfig
 set DO_FAIL=D:\TEMP\music\bg.mp3
-set DELAY=0
+set DELAY=1
 set LOG_ENABLE=0
 @REM =========================================  使用说明 end =========================================
 
@@ -37,14 +38,15 @@ set LOG_ENABLE=0
 :error
     echo 唔... %DO_CMD%执行失败
     if %LOG_ENABLE% NEQ 0  (
-      echo %time%: your cmd(%DO_CMD%) runfailed, ERRORLEVEL=%ERRORLEVEL% >> "cmd_%this_day%.log")
+        echo %time%: your cmd "%DO_CMD%" runfailed, ERRORLEVEL=%ERRORLEVEL% >> "cmd_%this_day%.log" 
+    )    
     @REM %DO_FAIL%
     goto loop
 
 :good
     echo 耶! 执行成功!.
     if %LOG_ENABLE% NEQ 0  (
-      echo %time%: your cmd(%DO_CMD%) run successful. >> "cmd_%this_day%.log" )
+      echo %time%: your cmd "%DO_CMD%" run successful. >> "cmd_%this_day%.log" )
     goto end  
 
 :loop
