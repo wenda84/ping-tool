@@ -12,6 +12,7 @@ REM DELAY       ---- ping的间隔
 set DO_CMD=git push
 set DO_FAIL=D:\TEMP\music\bg.mp3
 set DELAY=0
+set LOG_ENABLE=0
 @REM =========================================  使用说明 end =========================================
 
 @REM 这三行代码使命令会在后台运行，需要时可以打开
@@ -35,13 +36,15 @@ set DELAY=0
 
 :error
     echo 唔... %DO_CMD%执行失败
-    echo %time%: your cmd(%DO_CMD%) runfailed, ERRORLEVEL=%ERRORLEVEL% >> "cmd_%this_day%.log"
+    if %LOG_ENABLE% NEQ 0  (
+      echo %time%: your cmd(%DO_CMD%) runfailed, ERRORLEVEL=%ERRORLEVEL% >> "cmd_%this_day%.log")
     @REM %DO_FAIL%
     goto loop
 
 :good
     echo 耶! 执行成功!.
-    echo %time%: your cmd(%DO_CMD%) run successful. >> "cmd_%this_day%.log" 
+    if %LOG_ENABLE% NEQ 0  (
+      echo %time%: your cmd(%DO_CMD%) run successful. >> "cmd_%this_day%.log" )
     goto end  
 
 :loop
