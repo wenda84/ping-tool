@@ -23,7 +23,7 @@ set DELAY=3
     @REM 取日期放在begin后面，虽然效率低了点，但在脚本连续运行时，可支持跨天日志分包
     set this_day=%date:~0,4%_%date:~5,2%_%date:~8,2%
 
-    echo ===================== 开始执行...... =====================
+    echo ===================== 开始执行 %DO_CMD% ...... =====================
     %DO_CMD% >nul 2>nul
     @REM %DO_CMD% 
     if %ERRORLEVEL% EQU 0  (
@@ -34,14 +34,14 @@ set DELAY=3
     )
 
 :error
-    echo 唔----执行失败，%DELAY%秒后进行下一次尝试
-    echo %time%: your cmd runfailed, ERRORLEVEL=%ERRORLEVEL% >> "cmd_%this_day%.log"
+    echo 唔... %DO_CMD%执行失败
+    echo %time%: your cmd(%DO_CMD%) runfailed, ERRORLEVEL=%ERRORLEVEL% >> "cmd_%this_day%.log"
     @REM %DO_FAIL%
     goto loop
 
 :good
     echo 耶! 执行成功!.
-    echo %time%: your cmd run successful. >> "cmd_%this_day%.log" 
+    echo %time%: your cmd(%DO_CMD%) run successful. >> "cmd_%this_day%.log" 
     goto end  
 
 :loop
