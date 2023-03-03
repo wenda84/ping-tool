@@ -8,7 +8,7 @@ chcp 936 >nul 2>nul
 @REM =========================================  使用说明 begin  =========================================
 REM ADDR        ---- 表示需要ping的地址,
 REM DO_FAIL     ---- 失败时要做的事情，比如设为一音乐文件地址，如需要则可以打开
-REM DELAY       ---- ping的间隔
+REM DELAY       ---- 命令执行的间隔
 REM LOG_ENABLE  ---- 是否产生本地日志
 set DO_CMD=git push
 set DO_FAIL=D:\TEMP\music\bg.mp3
