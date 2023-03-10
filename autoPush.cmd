@@ -27,7 +27,6 @@ set LOG_ENABLE=0
 
     echo ===================== ¿ªÊ¼Ö´ÐÐ %DO_CMD% ...... =====================
     %DO_CMD% >nul 2>nul
-    @REM %DO_CMD% 
     if %ERRORLEVEL% EQU 0  (
         goto good 
     )^
